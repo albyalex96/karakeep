@@ -122,7 +122,7 @@ RUN touch /etc/s6-overlay/s6-rc.d/user/contents.d/init-db-migration \
     /etc/s6-overlay/s6-rc.d/user/contents.d/svc-web
 ENV USING_LEGACY_SEPARATE_CONTAINERS=true
 
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 CMD wget --no-verbose --tries=1 --spider http://127.0.0.1:3000/api/health || exit 1
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 CMD wget --no-verbose --tries=1 --spider http://0.0.0.0:3000/api/health || exit 1
 
 ################# The workers container ##############
 
